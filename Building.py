@@ -95,12 +95,10 @@ class Building:
         if not data['floors']:
             return building
         
-        # Initialize with the first floor's room count
         floors_count = len(data['floors'])
         rooms_per_floor = len(data['floors'][0]['rooms'])
         building.initialize(floors_count, rooms_per_floor)
         
-        # Restore state
         for floor_data, floor in zip(data['floors'], building.floors):
             for room_data, room in zip(floor_data['rooms'], floor.rooms):
                 room.has_zombies = room_data['has_zombies']
