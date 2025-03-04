@@ -16,42 +16,37 @@ class Simulation:
     def advance_turn(self, expansion_type="expansion"):
         """Advance the simulation by one turn."""
         self.turn += 1
-        zombie_rooms = self._get_zombie_rooms()
-        new_infections = self._calculate_new_infections(zombie_rooms)
+        zombie_rooms = self.get_zombie_rooms()
+        new_infections = self.calculate_new_infections(zombie_rooms)
         
         if expansion_type == "movement":
-            self._clear_original_zombie_rooms(zombie_rooms)
+            self.clear_original_zombie_rooms(zombie_rooms)
         
-        self._infect_new_rooms(new_infections)
+        self.infect_new_rooms(new_infections)
         return len(new_infections)
     
-    def _get_zombie_rooms(self):
-        """Return list of rooms containing zombies."""
+    def get_zombie_rooms(self):
         return [room for room in self.building.get_all_rooms() if room.has_zombies]
     
-    def _calculate_new_infections(self, zombie_rooms, propagation_probability=0.7):
-        """Calculate which new rooms will be infected by zombies."""
+    def calculate_new_infections(self, zombie_rooms, propagation_probability=0.7):
         new_infections = []
         for room in zombie_rooms:
-            available_rooms = self._get_available_adjacent_rooms(room)
+            available_rooms = self.get_available_adjacent_rooms(room)
             new_infections.extend(
                 room for room in available_rooms 
                 if random.random() < propagation_probability
             )
         return new_infections
     
-    def _get_available_adjacent_rooms(self, room):
-        """Get adjacent rooms that can be infected."""
+    def get_available_adjacent_rooms(self, room):
         adjacent_rooms = self.building.get_adjacent_rooms(room.floor_number, room.room_number)
         return [adj for adj in adjacent_rooms if not adj.has_zombies and not adj.is_blocked]
     
-    def _clear_original_zombie_rooms(self, zombie_rooms):
-        """Remove zombies from their original rooms during movement."""
+    def clear_original_zombie_rooms(self, zombie_rooms):
         for room in zombie_rooms:
             room.remove_zombie()
     
-    def _infect_new_rooms(self, rooms_to_infect):
-        """Add zombies to newly infected rooms."""
+    def infect_new_rooms(self, rooms_to_infect):
         for room in rooms_to_infect:
             room.add_zombie()
     

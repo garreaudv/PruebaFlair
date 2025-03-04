@@ -1,0 +1,139 @@
+{
+  "turn": 1,
+  "building": {
+    "floors": [
+      {
+        "floor_number": 0,
+        "rooms": [
+          {
+            "floor_number": 0,
+            "room_number": 0,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          },
+          {
+            "floor_number": 0,
+            "room_number": 1,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          },
+          {
+            "floor_number": 0,
+            "room_number": 2,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          },
+          {
+            "floor_number": 0,
+            "room_number": 3,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          }
+        ]
+      },
+      {
+        "floor_number": 1,
+        "rooms": [
+          {
+            "floor_number": 1,
+            "room_number": 0,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          },
+          {
+            "floor_number": 1,
+            "room_number": 1,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          },
+          {
+            "floor_number": 1,
+            "room_number": 2,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          },
+          {
+            "floor_number": 1,
+            "room_number": 3,
+            "has_zombies": false,
+            "is_blocked": false,
+            "sensor_state": "NORMAL"
+          }
+        ]
+      },
+      {
+        "floor_number": 2,
+        "rooms": [
+          {
+            "floor_number": 2,
+            "room_number": 0,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          },
+          {
+            "floor_number": 2,
+            "room_number": 1,
+            "has_zombies": false,
+            "is_blocked": false,
+            "sensor_state": "NORMAL"
+          },
+          {
+            "floor_number": 2,
+            "room_number": 2,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          },
+          {
+            "floor_number": 2,
+            "room_number": 3,
+            "has_zombies": true,
+            "is_blocked": false,
+            "sensor_state": "ALERT"
+          }
+        ]
+      },
+      {
+        "floor_number": 3,
+        "rooms": [
+          {
+            "floor_number": 3,
+            "room_number": 0,
+            "has_zombies": false,
+            "is_blocked": false,
+            "sensor_state": "NORMAL"
+          },
+          {
+            "floor_number": 3,
+            "room_number": 1,
+            "has_zombies": false,
+            "is_blocked": false,
+            "sensor_state": "NORMAL"
+          },
+          {
+            "floor_number": 3,
+            "room_number": 2,
+            "has_zombies": false,
+            "is_blocked": false,
+            "sensor_state": "NORMAL"
+          },
+          {
+            "floor_number": 3,
+            "room_number": 3,
+            "has_zombies": false,
+            "is_blocked": false,
+            "sensor_state": "NORMAL"
+          }
+        ]
+      }
+    ]
+  }
+}
